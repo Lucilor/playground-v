@@ -1,0 +1,51 @@
+version: 2.1
+orbs:
+    node: circleci/node@5
+    browser-tools: circleci/browser-tools@1
+commands:
+    install-packages:
+        steps:
+            - checkout
+            - node/install-packages:
+                pkg-manager: yarn-berry
+executors:
+    default:
+        docker:
+            - image: cimg/node:lts-browsers
+        resource_class: large
+
+jobs:
+    build:
+        executor: default
+        steps:
+            - install-packages
+    lint:
+        executor: default
+        steps:
+            - install-packages
+            - run:
+                name: Lint
+                command: yarn lint
+    unit-test:
+        executor: default
+        steps:
+            - install-packages
+            - browser-tools/install-chrome
+            - browser-tools/install-chromedriver
+            - run:
+                name: Unit test
+                command: yarn test:unit
+    e2e-test:
+        executor: default
+        steps:
+            - install-packages
+            - run:
+                name: E2E test
+                command: yarn test:e2e:ci
+
+workflows:
+    test:
+        jobs:
+            - lint
+            - unit-test
+            # - e2e-test
