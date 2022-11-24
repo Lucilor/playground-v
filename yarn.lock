@@ -1171,6 +1171,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vitest/ui@npm:^0.25.3":
+  version: 0.25.3
+  resolution: "@vitest/ui@npm:0.25.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vitest%2Fui%2F-%2Fui-0.25.3.tgz"
+  dependencies:
+    sirv: ^2.0.2
+  checksum: 496d6ede6a242ede23cc4e77db4b659872a8d63ae2dc9e58da64b8caf406c3509717c858a97877b7d77bca71b68aa46516c2ea1d9e85ba902f242955bb062b35
+  languageName: node
+  linkType: hard
+
 "@volar/language-core@npm:1.0.9":
   version: 1.0.9
   resolution: "@volar/language-core@npm:1.0.9::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40volar%2Flanguage-core%2F-%2Flanguage-core-1.0.9.tgz"
@@ -6502,6 +6511,7 @@ __metadata:
     "@types/node": ^18.11.9
     "@vitejs/plugin-vue": ^3.2.0
     "@vitejs/plugin-vue-jsx": ^2.1.1
+    "@vitest/ui": ^0.25.3
     "@vue/eslint-config-prettier": ^7.0.0
     "@vue/eslint-config-typescript": ^11.0.2
     "@vue/test-utils": ^2.2.4
